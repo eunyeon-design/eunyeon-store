@@ -23,7 +23,7 @@ export default function Header() {
         <a
           href="/"
           data-cursor-hover
-          className="font-display text-2xl font-normal tracking-tight text-brand-black sm:text-3xl"
+          className="font-display text-2xl font-black italic tracking-tighter text-brand-black [font-stretch:condensed] sm:text-3xl"
         >
           eunyeon
         </a>
