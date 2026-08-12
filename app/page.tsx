@@ -15,7 +15,7 @@ export default function Home() {
           Archive No. 001 — Book Cover Collection
         </p>
 
-        <h1 className="text-center font-serif text-[13vw] font-black italic leading-[0.92] text-brand-black sm:text-[9vw] lg:text-[7vw]">
+        <h1 className="text-center font-display text-[13vw] font-black italic leading-[0.88] tracking-tighter text-brand-black [font-stretch:condensed] sm:text-[9vw] lg:text-[7vw]">
           EUN<span className="text-brand-red">YEON</span>
         </h1>
 
