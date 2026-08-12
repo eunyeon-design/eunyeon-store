@@ -49,7 +49,8 @@ export default function Home() {
             <span className="text-brand-red">made to be handled.</span>
           </h2>
           <p className="max-w-lg font-display text-sm leading-relaxed text-brand-black/70">
-            eunyeon begins with the book cover — a premium, analog-first accessory for
+            <span className="text-brand-red">e</span>un<span className="text-brand-red">y</span>eon
+            begins with the book cover — a premium, analog-first accessory for
             people who still turn pages. The archive is built to grow: accessories and
             apparel will join the same structure, season by season, without breaking
             what came before.
