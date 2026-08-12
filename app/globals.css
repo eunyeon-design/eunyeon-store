@@ -3,10 +3,10 @@
 @tailwind utilities;
 
 :root {
-  --color-red: #e50012;
+  --color-red: #f8c5d5;
   --color-black: #111111;
   --color-off: #ffffff;
-  --cursor-glow: rgba(229, 0, 18, 0.55);
+  --cursor-glow: rgba(248, 197, 213, 0.65);
 }
 
 * {

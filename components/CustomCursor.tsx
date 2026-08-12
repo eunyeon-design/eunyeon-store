@@ -78,8 +78,8 @@ function RibbonShape() {
     >
       <defs>
         <linearGradient id="ribbonGradient" x1="0" y1="0" x2="32" y2="32">
-          <stop offset="0%" stopColor="#ff6f91" />
-          <stop offset="100%" stopColor="#e50012" />
+          <stop offset="0%" stopColor="#ffb3d1" />
+          <stop offset="100%" stopColor="#f8c5d5" />
         </linearGradient>
       </defs>
       <path
