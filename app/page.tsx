@@ -1,5 +1,13 @@
 import Image from "next/image";
 
+const MARQUEE_IMAGES = [
+  "/marquee/lookbook-01.jpg",
+  "/marquee/lookbook-02.jpg",
+  "/marquee/lookbook-03.jpg",
+  "/marquee/lookbook-04.jpg",
+  "/marquee/lookbook-05.jpg",
+];
+
 export default function Home() {
   return (
     <main>
@@ -61,6 +69,29 @@ export default function Home() {
             apparel will join the same structure, season by season, without breaking
             what came before.
           </p>
+        </div>
+      </section>
+
+      {/* GALLERY — right-to-left flowing lookbook strip */}
+      <section className="border-t border-brand-black/10 py-16">
+        <div className="overflow-hidden">
+          <div className="flex w-max animate-marquee gap-6">
+            {[...MARQUEE_IMAGES, ...MARQUEE_IMAGES].map((src, index) => (
+              <div
+                key={`${src}-${index}`}
+                data-cursor-hover
+                className="relative h-[340px] w-[240px] flex-shrink-0 overflow-hidden border border-brand-black/10 sm:h-[460px] sm:w-[330px]"
+              >
+                <Image
+                  src={src}
+                  alt="eunyeon lookbook"
+                  fill
+                  className="object-cover"
+                  sizes="330px"
+                />
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
