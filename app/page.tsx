@@ -16,7 +16,7 @@ export default function Home() {
         </p>
 
         <h1 className="text-center font-display text-[13vw] font-black italic leading-[0.88] tracking-tighter text-brand-black [font-stretch:condensed] sm:text-[9vw] lg:text-[7vw]">
-          EUN<span className="text-brand-red">YEON</span>
+          <span className="text-brand-red">E</span>UN<span className="text-brand-red">Y</span>EON
         </h1>
 
         <p className="mt-6 max-w-md text-center font-serif text-lg italic text-brand-black/60 sm:text-xl">
