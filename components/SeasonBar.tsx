@@ -18,7 +18,9 @@ export default function SeasonBar() {
   const [active, setActive] = useState<SeasonOption["id"] | null>(null);
 
   return (
-    <div className="w-full overflow-x-auto border-b border-brand-black/10 bg-brand-off">
+    <div
+      className="w-full overflow-x-auto border-b border-brand-black/10 bg-brand-off [overscroll-behavior-x:contain] [touch-action:pan-x]"
+    >
       <ul className="flex min-w-max items-center gap-5 whitespace-nowrap px-4 py-2 text-[11px] font-display font-bold uppercase tracking-widest2 sm:gap-7 sm:px-8">
         {SEASONS.map((season) => (
           <li key={season.id}>
