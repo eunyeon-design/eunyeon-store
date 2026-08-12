@@ -77,13 +77,9 @@ function RibbonShape() {
       xmlns="http://www.w3.org/2000/svg"
     >
       <defs>
-        <linearGradient id="ribbonGradient" x1="0" y1="0" x2="34" y2="26">
+        <linearGradient id="ribbonGradient" x1="0" y1="0" x2="34" y2="38">
           <stop offset="0%" stopColor="#ffc3dc" />
           <stop offset="100%" stopColor="#ee7da6" />
-        </linearGradient>
-        <linearGradient id="ribbonTailGradient" x1="0" y1="18" x2="34" y2="38">
-          <stop offset="0%" stopColor="#ee7da6" />
-          <stop offset="100%" stopColor="#e0578c" />
         </linearGradient>
         <radialGradient id="pearlGradient" cx="35%" cy="30%" r="70%">
           <stop offset="0%" stopColor="#ffffff" />
@@ -91,40 +87,38 @@ function RibbonShape() {
         </radialGradient>
       </defs>
 
-      {/* right tail */}
+      {/* right tail — shallow, soft notch at the bottom edge */}
       <path
-        d="M18 20 L26 36 L22.5 32 L20 37 L17 21 Z"
-        fill="url(#ribbonTailGradient)"
-        opacity="0.95"
-      />
-      {/* left tail */}
-      <path
-        d="M16 20 L8 36 L11.5 32 L14 37 L17 21 Z"
-        fill="url(#ribbonTailGradient)"
-        opacity="0.95"
-      />
-
-      {/* right loop — outer */}
-      <path
-        d="M17 18 C24 7 35 5 34 14 C33.3 22 22 24 17 18 Z"
+        d="M16 20 L20 19 L27 36 L23.5 34.7 L20 37 L17 21 Z"
         fill="url(#ribbonGradient)"
       />
-      {/* left loop — outer */}
+      {/* left tail — shallow, soft notch at the bottom edge */}
       <path
-        d="M17 18 C10 7 -1 5 0 14 C0.7 22 12 24 17 18 Z"
+        d="M18 20 L14 19 L7 36 L10.5 34.7 L14 37 L17 21 Z"
+        fill="url(#ribbonGradient)"
+      />
+
+      {/* right loop — outer, kite-folded shape instead of round */}
+      <path
+        d="M17 18 Q22 10 26 6 Q31 9 33 13 Q30 19 26 24 Q21 22 17 18 Z"
+        fill="url(#ribbonGradient)"
+      />
+      {/* left loop — outer, kite-folded shape instead of round */}
+      <path
+        d="M17 18 Q12 10 8 6 Q3 9 1 13 Q4 19 8 24 Q13 22 17 18 Z"
         fill="url(#ribbonGradient)"
       />
       {/* right loop — inner ruffle highlight */}
       <path
-        d="M17 18 C21 12 28 11 27.5 15.5 C27 19.5 21 20.5 17 18 Z"
+        d="M17 18 Q20 13 23 10 Q26 12 27 15 Q25 18 22 20 Q19 19 17 18 Z"
         fill="#ffffff"
-        opacity="0.22"
+        opacity="0.24"
       />
       {/* left loop — inner ruffle highlight */}
       <path
-        d="M17 18 C13 12 6 11 6.5 15.5 C7 19.5 13 20.5 17 18 Z"
+        d="M17 18 Q14 13 11 10 Q8 12 7 15 Q9 18 12 20 Q15 19 17 18 Z"
         fill="#ffffff"
-        opacity="0.22"
+        opacity="0.24"
       />
 
       {/* pearl knot */}
