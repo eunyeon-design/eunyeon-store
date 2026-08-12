@@ -89,18 +89,18 @@ function CandyShape() {
         </linearGradient>
       </defs>
 
-      {/* left cellophane twist — faceted fan, tips softened but not blobby */}
+      {/* left cellophane twist — thicker faceted fan, tips softened but not blobby */}
       <path
-        d="M16 16 L4 6 Q2 7 3 9.5 L7.5 16 L3 22.5 Q2 25 4 26 L16 16 Z"
+        d="M16 16 L3 4.5 Q1 6 2.5 9 L5 16 L2.5 23 Q1 26 3 27.5 L16 16 Z"
         fill="url(#wrapperGradient)"
         stroke="#d3dce0"
         strokeWidth="0.4"
         strokeLinejoin="round"
         opacity="0.92"
       />
-      {/* right cellophane twist — faceted fan, tips softened but not blobby */}
+      {/* right cellophane twist — thicker faceted fan, tips softened but not blobby */}
       <path
-        d="M30 16 L42 6 Q44 7 43 9.5 L38.5 16 L43 22.5 Q44 25 42 26 L30 16 Z"
+        d="M30 16 L43 4.5 Q45 6 43.5 9 L41 16 L43.5 23 Q45 26 43 27.5 L30 16 Z"
         fill="url(#wrapperGradient)"
         stroke="#d3dce0"
         strokeWidth="0.4"
@@ -108,7 +108,7 @@ function CandyShape() {
         opacity="0.92"
       />
       {/* soft crinkle hints on wrapper */}
-      <path d="M7.5 16 L3.5 9.5 M7.5 16 L3.5 22.5 M38.5 16 L42.5 9.5 M38.5 16 L42.5 22.5" stroke="#d8e2e5" strokeWidth="0.35" opacity="0.7" fill="none" />
+      <path d="M5 16 L2.7 9 M5 16 L2.7 23 M41 16 L43.3 9 M41 16 L43.3 23" stroke="#d8e2e5" strokeWidth="0.35" opacity="0.7" fill="none" />
 
       {/* candy body — faceted glass sphere */}
       <path
