@@ -92,7 +92,7 @@ function RibbonShape() {
         fill="url(#ribbonGradient)"
         opacity="0.92"
       />
-      <circle cx="16" cy="16" r="2.6" className="ribbon-cursor-dot" fill="#fbf9f5" />
+      <circle cx="16" cy="16" r="2.6" className="ribbon-cursor-dot" fill="#ffffff" />
     </svg>
   );
 }

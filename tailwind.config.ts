@@ -10,7 +10,7 @@ const config: Config = {
       colors: {
         "brand-red": "#E50012",
         "brand-black": "#111111",
-        "brand-off": "#FBF9F5",
+        "brand-off": "#FFFFFF",
       },
       fontFamily: {
         serif: ["var(--font-playfair)", "serif"],
