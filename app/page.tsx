@@ -13,11 +13,6 @@ export default function Home() {
     <main>
       {/* HERO — visual placeholder until lookbook photography is ready */}
       <section className="relative flex min-h-[86vh] flex-col items-center justify-center overflow-hidden px-6 py-20">
-        <div className="wireframe-corner left-6 top-6 border-l border-t sm:left-10 sm:top-10" />
-        <div className="wireframe-corner right-6 top-6 border-r border-t sm:right-10 sm:top-10" />
-        <div className="wireframe-corner bottom-6 left-6 border-b border-l sm:bottom-10 sm:left-10" />
-        <div className="wireframe-corner bottom-6 right-6 border-b border-r sm:bottom-10 sm:right-10" />
-
         <p className="mb-6 font-display text-xs font-bold uppercase tracking-widest2 text-brand-black/50">
           Archive No. 001 — Book Cover Collection
         </p>
