@@ -25,7 +25,8 @@ export default function Header() {
           data-cursor-hover
           className="font-display text-2xl font-black italic tracking-tighter text-brand-black [font-stretch:condensed] sm:text-3xl"
         >
-          eunyeon
+          <span className="text-brand-red">e</span>un<span className="text-brand-red">y</span>
+          <span className="text-brand-red">e</span>on
         </a>
 
         <nav className="hidden items-center gap-9 font-display text-[13px] font-bold uppercase tracking-widest2 md:flex">
