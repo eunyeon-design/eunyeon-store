@@ -71,51 +71,65 @@ function RibbonShape() {
   return (
     <svg
       width="30"
-      height="34"
-      viewBox="0 0 32 36"
+      height="36"
+      viewBox="0 0 34 40"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
       <defs>
-        <linearGradient id="ribbonGradient" x1="0" y1="0" x2="32" y2="24">
-          <stop offset="0%" stopColor="#ffb3d1" />
-          <stop offset="100%" stopColor="#f8c5d5" />
+        <linearGradient id="ribbonGradient" x1="0" y1="0" x2="34" y2="26">
+          <stop offset="0%" stopColor="#ffc3dc" />
+          <stop offset="100%" stopColor="#ee7da6" />
         </linearGradient>
-        <linearGradient id="ribbonTailGradient" x1="0" y1="16" x2="32" y2="34">
-          <stop offset="0%" stopColor="#f8a9c4" />
-          <stop offset="100%" stopColor="#f47fac" />
+        <linearGradient id="ribbonTailGradient" x1="0" y1="18" x2="34" y2="38">
+          <stop offset="0%" stopColor="#ee7da6" />
+          <stop offset="100%" stopColor="#e0578c" />
         </linearGradient>
+        <radialGradient id="pearlGradient" cx="35%" cy="30%" r="70%">
+          <stop offset="0%" stopColor="#ffffff" />
+          <stop offset="100%" stopColor="#fbdce8" />
+        </radialGradient>
       </defs>
 
       {/* right tail */}
       <path
-        d="M17 17 L23 30 L20.3 27.2 L18.3 30.5 L15.5 18 Z"
+        d="M18 20 L26 36 L22.5 32 L20 37 L17 21 Z"
         fill="url(#ribbonTailGradient)"
-        opacity="0.92"
+        opacity="0.95"
       />
       {/* left tail */}
       <path
-        d="M15 17 L9 30 L11.7 27.2 L13.7 30.5 L16.5 18 Z"
+        d="M16 20 L8 36 L11.5 32 L14 37 L17 21 Z"
         fill="url(#ribbonTailGradient)"
-        opacity="0.92"
-      />
-
-      {/* right loop */}
-      <path
-        d="M16 17 C20 10 30 7 31 13 C31.8 18.5 22 20.5 16 17 Z"
-        fill="url(#ribbonGradient)"
-        opacity="0.95"
-      />
-      {/* left loop */}
-      <path
-        d="M16 17 C12 10 2 7 1 13 C0.2 18.5 10 20.5 16 17 Z"
-        fill="url(#ribbonGradient)"
         opacity="0.95"
       />
 
-      {/* knot */}
-      <rect x="13.2" y="14.5" width="5.6" height="5" rx="1.6" fill="#f47fac" />
-      <circle cx="15" cy="16" r="1" className="ribbon-cursor-dot" fill="#ffffff" opacity="0.85" />
+      {/* right loop — outer */}
+      <path
+        d="M17 18 C24 7 35 5 34 14 C33.3 22 22 24 17 18 Z"
+        fill="url(#ribbonGradient)"
+      />
+      {/* left loop — outer */}
+      <path
+        d="M17 18 C10 7 -1 5 0 14 C0.7 22 12 24 17 18 Z"
+        fill="url(#ribbonGradient)"
+      />
+      {/* right loop — inner ruffle highlight */}
+      <path
+        d="M17 18 C21 12 28 11 27.5 15.5 C27 19.5 21 20.5 17 18 Z"
+        fill="#ffffff"
+        opacity="0.22"
+      />
+      {/* left loop — inner ruffle highlight */}
+      <path
+        d="M17 18 C13 12 6 11 6.5 15.5 C7 19.5 13 20.5 17 18 Z"
+        fill="#ffffff"
+        opacity="0.22"
+      />
+
+      {/* pearl knot */}
+      <circle cx="17" cy="18.5" r="3.4" fill="url(#pearlGradient)" stroke="#e0578c" strokeWidth="0.8" />
+      <circle cx="15.8" cy="17.3" r="0.9" className="ribbon-cursor-dot" fill="#ffffff" opacity="0.9" />
     </svg>
   );
 }
