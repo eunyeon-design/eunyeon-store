@@ -11,7 +11,7 @@ export default function Home() {
         <div className="wireframe-line absolute left-0 top-1/2 w-full" />
         <div className="wireframe-line absolute left-1/2 top-0 h-full w-px bg-none" />
 
-        <p className="mb-6 font-serif text-xs font-normal uppercase tracking-widest2 text-brand-black/50">
+        <p className="mb-6 font-display text-xs font-bold uppercase tracking-widest2 text-brand-black/50">
           Archive No. 001 — Book Cover Collection
         </p>
 
@@ -26,7 +26,7 @@ export default function Home() {
         </p>
 
         <div data-cursor-hover className="mt-14 flex h-40 w-64 items-center justify-center border border-dashed border-brand-black/30 sm:h-56 sm:w-96">
-          <span className="font-serif text-[11px] font-normal uppercase tracking-widest2 text-brand-black/40">
+          <span className="font-display text-[11px] font-bold uppercase tracking-widest2 text-brand-black/40">
             Visual Coming Soon
           </span>
         </div>
@@ -34,7 +34,7 @@ export default function Home() {
         <a
           href="#archive"
           data-cursor-hover
-          className="mt-16 font-serif text-xs font-normal uppercase tracking-widest2 text-brand-black/60 transition-colors hover:text-brand-red"
+          className="mt-16 font-display text-xs font-bold uppercase tracking-widest2 text-brand-black/60 transition-colors hover:text-brand-red"
         >
           Scroll to Explore ↓
         </a>
@@ -48,7 +48,7 @@ export default function Home() {
             <br />
             <span className="text-brand-red">made to be handled.</span>
           </h2>
-          <p className="max-w-lg font-serif text-sm leading-relaxed text-brand-black/70">
+          <p className="max-w-lg font-display text-sm leading-relaxed text-brand-black/70">
             eunyeon begins with the book cover — a premium, analog-first accessory for
             people who still turn pages. The archive is built to grow: accessories and
             apparel will join the same structure, season by season, without breaking
@@ -64,7 +64,7 @@ export default function Home() {
             <h2 className="font-serif text-3xl font-bold italic sm:text-4xl">
               Category Archive
             </h2>
-            <p className="font-serif text-xs font-normal uppercase tracking-widest2 text-brand-off/50">
+            <p className="font-display text-xs font-bold uppercase tracking-widest2 text-brand-off/50">
               Book Cover — Live / Accessories — Soon / Apparel — Soon
             </p>
           </div>
@@ -76,7 +76,7 @@ export default function Home() {
                 className="flex h-52 flex-col items-center justify-center gap-2 border border-brand-off/15 bg-brand-black transition-colors duration-300 hover:bg-brand-red/10"
               >
                 <span className="font-serif text-2xl italic">{category}</span>
-                <span className="font-serif text-[10px] font-normal uppercase tracking-widest2 text-brand-off/40">
+                <span className="font-display text-[10px] font-bold uppercase tracking-widest2 text-brand-off/40">
                   {index === 0 ? "Available Now" : "Coming Soon"}
                 </span>
               </div>
@@ -87,7 +87,7 @@ export default function Home() {
 
       {/* FOOTER */}
       <footer className="border-t border-brand-black/10 px-6 py-10 text-center sm:px-10">
-        <p className="font-serif text-[11px] font-normal uppercase tracking-widest2 text-brand-black/40">
+        <p className="font-display text-[11px] font-bold uppercase tracking-widest2 text-brand-black/40">
           © 2026 eunyeon — eunyeon040321@gmail.com
         </p>
       </footer>

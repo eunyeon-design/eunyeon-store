@@ -28,7 +28,7 @@ export default function Header() {
           eunyeon
         </a>
 
-        <nav className="hidden items-center gap-9 font-serif text-[13px] font-normal uppercase tracking-widest2 md:flex">
+        <nav className="hidden items-center gap-9 font-display text-[13px] font-bold uppercase tracking-widest2 md:flex">
           {NAV_LINKS.map((link) => (
             <a
               key={link.label}
@@ -67,7 +67,7 @@ export default function Header() {
 
       {menuOpen && (
         <div className="border-t border-brand-black/10 px-4 pb-6 md:hidden">
-          <nav className="flex flex-col gap-4 pt-4 font-serif text-sm font-normal uppercase tracking-widest2">
+          <nav className="flex flex-col gap-4 pt-4 font-display text-sm font-bold uppercase tracking-widest2">
             {[...NAV_LINKS, ...OUTER_LINKS.map((l) => ({ label: l.label, href: l.href }))].map(
               (link) => (
                 <a
