@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function Home() {
   return (
     <main>
@@ -7,9 +9,6 @@ export default function Home() {
         <div className="wireframe-corner right-6 top-6 border-r border-t sm:right-10 sm:top-10" />
         <div className="wireframe-corner bottom-6 left-6 border-b border-l sm:bottom-10 sm:left-10" />
         <div className="wireframe-corner bottom-6 right-6 border-b border-r sm:bottom-10 sm:right-10" />
-
-        <div className="wireframe-line absolute left-0 top-1/2 w-full" />
-        <div className="wireframe-line absolute left-1/2 top-0 h-full w-px bg-none" />
 
         <p className="mb-6 font-display text-xs font-bold uppercase tracking-widest2 text-brand-black/50">
           Archive No. 001 — Book Cover Collection
@@ -25,10 +24,17 @@ export default function Home() {
           Lookbook imagery arriving soon.
         </p>
 
-        <div data-cursor-hover className="mt-14 flex h-40 w-64 items-center justify-center border border-dashed border-brand-black/30 sm:h-56 sm:w-96">
-          <span className="font-display text-[11px] font-bold uppercase tracking-widest2 text-brand-black/40">
-            Visual Coming Soon
-          </span>
+        <div
+          data-cursor-hover
+          className="relative mt-14 h-[380px] w-[280px] overflow-hidden border border-brand-black/15 sm:h-[520px] sm:w-[390px]"
+        >
+          <Image
+            src="/hero-lookbook.jpg"
+            alt="eunyeon lookbook preview"
+            fill
+            priority
+            className="object-cover"
+          />
         </div>
 
         <a
