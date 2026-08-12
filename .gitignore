@@ -26,5 +26,8 @@ yarn-error.log*
 # claude code local settings
 .claude/
 
+# chat-pasted reference images (not site assets)
+/image/
+
 # typescript
 *.tsbuildinfo
