@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Instagram, Mail, Menu, X } from "lucide-react";
+import { Instagram, Mail, Menu, Search, X } from "lucide-react";
 
 const NAV_LINKS = [
   { label: "SHOP", href: "#" },
@@ -41,28 +41,50 @@ export default function Header() {
           ))}
         </nav>
 
-        <div className="hidden items-center gap-4 md:flex">
-          {OUTER_LINKS.map(({ label, href, icon: Icon }) => (
-            <a
-              key={label}
-              href={href}
-              data-cursor-hover
-              aria-label={label}
-              className="text-brand-black transition-colors duration-200 hover:text-brand-red"
-            >
-              <Icon size={18} strokeWidth={1.75} />
-            </a>
-          ))}
-        </div>
+        <div className="flex items-center gap-4">
+          <div className="hidden items-center gap-4 md:flex">
+            {OUTER_LINKS.map(({ label, href, icon: Icon }) => (
+              <a
+                key={label}
+                href={href}
+                data-cursor-hover
+                aria-label={label}
+                className="text-brand-black transition-colors duration-200 hover:text-brand-red"
+              >
+                <Icon size={18} strokeWidth={1.75} />
+              </a>
+            ))}
+          </div>
 
-        <button
-          data-cursor-hover
-          aria-label="Toggle menu"
-          className="text-brand-black md:hidden"
-          onClick={() => setMenuOpen((open) => !open)}
-        >
-          {menuOpen ? <X size={22} /> : <Menu size={22} />}
-        </button>
+          <div className="group relative" data-cursor-hover>
+            <div className="flex cursor-pointer items-center gap-1.5 text-brand-black transition-colors duration-200 group-hover:text-brand-red">
+              <Search size={18} strokeWidth={1.75} />
+              <span className="hidden font-display text-[11px] font-bold uppercase tracking-widest2 sm:inline">
+                Search
+              </span>
+            </div>
+
+            <div className="invisible absolute right-0 top-full z-50 mt-3 w-64 opacity-0 transition-all duration-200 group-hover:visible group-hover:opacity-100">
+              <div className="border border-brand-black/15 bg-brand-off p-3 shadow-lg">
+                <input
+                  type="text"
+                  placeholder="Search the archive..."
+                  data-cursor-hover
+                  className="w-full border-b border-brand-black/20 bg-transparent py-1 font-display text-sm text-brand-black outline-none placeholder:text-brand-black/40"
+                />
+              </div>
+            </div>
+          </div>
+
+          <button
+            data-cursor-hover
+            aria-label="Toggle menu"
+            className="text-brand-black md:hidden"
+            onClick={() => setMenuOpen((open) => !open)}
+          >
+            {menuOpen ? <X size={22} /> : <Menu size={22} />}
+          </button>
+        </div>
       </div>
 
       {menuOpen && (
