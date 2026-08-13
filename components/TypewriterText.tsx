@@ -16,6 +16,7 @@ export default function TypewriterText({
   const [displayedLines, setDisplayedLines] = useState<string[]>(() =>
     lines.map(() => "")
   );
+  const [activeIndex, setActiveIndex] = useState(0);
   const [done, setDone] = useState(false);
 
   useEffect(() => {
@@ -32,6 +33,7 @@ export default function TypewriterText({
         return;
       }
 
+      setActiveIndex(lineIndex);
       const currentLine = lines[lineIndex];
 
       if (charIndex <= currentLine.length) {
@@ -64,12 +66,12 @@ export default function TypewriterText({
       {displayedLines.map((line, index) => (
         <span key={index}>
           {line}
+          {!done && index === activeIndex && (
+            <span className="ml-0.5 inline-block h-[1em] w-[1px] translate-y-[2px] animate-pulse bg-current align-middle" />
+          )}
           {index < displayedLines.length - 1 && <br />}
         </span>
       ))}
-      {!done && (
-        <span className="ml-0.5 inline-block h-[1em] w-[1px] translate-y-[2px] animate-pulse bg-current align-middle" />
-      )}
     </p>
   );
 }
