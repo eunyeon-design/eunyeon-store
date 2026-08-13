@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Instagram, Mail, Menu, Search, X } from "lucide-react";
 
 const NAV_LINKS = [
-  { label: "SHOP", href: "#" },
+  { label: "SHOP", href: "/shop" },
   { label: "ABOUT", href: "#about" },
   { label: "ARCHIVE", href: "#archive" },
 ];

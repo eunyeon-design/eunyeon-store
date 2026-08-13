@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 const MARQUEE_IMAGES = [
   "/marquee/lookbook-01.jpg",
@@ -102,18 +103,37 @@ export default function Home() {
             </p>
           </div>
           <div className="grid gap-px overflow-hidden border border-brand-off/15 sm:grid-cols-3">
-            {["Book Cover", "Accessories", "Apparel"].map((category, index) => (
-              <div
-                key={category}
-                data-cursor-hover
-                className="flex h-52 flex-col items-center justify-center gap-2 border border-brand-off/15 bg-brand-black transition-colors duration-300 hover:bg-brand-red/10"
-              >
-                <span className="font-serif text-2xl italic">{category}</span>
-                <span className="font-display text-[10px] font-bold uppercase tracking-widest2 text-brand-off/40">
-                  {index === 0 ? "Available Now" : "Coming Soon"}
-                </span>
-              </div>
-            ))}
+            {[
+              { name: "Book Cover", href: "/shop" },
+              { name: "Accessories", href: null },
+              { name: "Apparel", href: null },
+            ].map((category) => {
+              const tileClasses =
+                "flex h-52 flex-col items-center justify-center gap-2 border border-brand-off/15 bg-brand-black transition-colors duration-300 hover:bg-brand-red/10";
+              const content = (
+                <>
+                  <span className="font-serif text-2xl italic">{category.name}</span>
+                  <span className="font-display text-[10px] font-bold uppercase tracking-widest2 text-brand-off/40">
+                    {category.href ? "Available Now" : "Coming Soon"}
+                  </span>
+                </>
+              );
+
+              return category.href ? (
+                <Link
+                  key={category.name}
+                  href={category.href}
+                  data-cursor-hover
+                  className={tileClasses}
+                >
+                  {content}
+                </Link>
+              ) : (
+                <div key={category.name} data-cursor-hover className={tileClasses}>
+                  {content}
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
