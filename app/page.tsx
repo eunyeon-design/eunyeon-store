@@ -17,7 +17,7 @@ export default function Home() {
       <section className="relative flex min-h-[86vh] flex-col items-center justify-start overflow-hidden px-6 pb-20 pt-12">
         <TypewriterText
           lines={["An analog romance for the objects you carry.", "Lookbook imagery arriving soon."]}
-          className="max-w-md text-center font-serif text-lg italic text-brand-black/60 sm:text-xl"
+          className="min-h-[3.75rem] max-w-md text-center font-serif text-lg italic text-brand-black/60 sm:text-xl"
         />
 
         {/* Mobile / narrow screens — portrait crop */}
