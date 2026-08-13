@@ -14,14 +14,6 @@ export default function Home() {
     <main>
       {/* HERO — visual placeholder until lookbook photography is ready */}
       <section className="relative flex min-h-[86vh] flex-col items-center justify-center overflow-hidden px-6 py-20">
-        <p className="mb-6 font-display text-xs font-bold uppercase tracking-widest2 text-brand-black/50">
-          Archive No. 001 — Book Cover Collection
-        </p>
-
-        <h1 className="text-center font-display text-[13vw] font-black italic leading-[0.88] tracking-tighter text-brand-black [font-stretch:condensed] sm:text-[9vw] lg:text-[7vw]">
-          <span className="text-brand-red">E</span>UN<span className="text-brand-red">Y</span>EON
-        </h1>
-
         <p className="mt-6 max-w-md text-center font-serif text-lg italic text-brand-black/60 sm:text-xl">
           An analog romance for the objects you carry.
           <br />
