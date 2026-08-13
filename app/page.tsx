@@ -14,16 +14,16 @@ export default function Home() {
   return (
     <main>
       {/* HERO — visual placeholder until lookbook photography is ready */}
-      <section className="relative flex min-h-[86vh] flex-col items-center justify-center overflow-hidden px-6 py-20">
+      <section className="relative flex min-h-[86vh] flex-col items-center justify-start overflow-hidden px-6 pb-20 pt-12">
         <TypewriterText
           lines={["An analog romance for the objects you carry.", "Lookbook imagery arriving soon."]}
-          className="mt-6 max-w-md text-center font-serif text-lg italic text-brand-black/60 sm:text-xl"
+          className="max-w-md text-center font-serif text-lg italic text-brand-black/60 sm:text-xl"
         />
 
         {/* Mobile / narrow screens — portrait crop */}
         <div
           data-cursor-hover
-          className="relative mt-14 block h-[380px] w-[280px] overflow-hidden border border-brand-black/15 sm:h-[520px] sm:w-[390px] md:hidden"
+          className="relative mt-12 block h-[380px] w-[280px] overflow-hidden border border-brand-black/15 sm:h-[520px] sm:w-[390px] md:hidden"
         >
           <Image
             src="/hero-lookbook.jpg"
@@ -37,7 +37,7 @@ export default function Home() {
         {/* Desktop / wide screens — full wide scene */}
         <div
           data-cursor-hover
-          className="relative mt-14 hidden aspect-[1680/966] w-full max-w-[900px] overflow-hidden border border-brand-black/15 md:block"
+          className="relative mt-12 hidden aspect-[1680/966] w-full max-w-[900px] overflow-hidden border border-brand-black/15 md:block"
         >
           <Image
             src="/hero-desktop.png"
