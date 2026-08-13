@@ -49,6 +49,12 @@ body {
   mix-blend-mode: normal;
 }
 
+/* Guarantee the decorative cursor overlay can never intercept clicks */
+.cursor-overlay,
+.cursor-overlay * {
+  pointer-events: none !important;
+}
+
 .ribbon-cursor-dot {
   filter: blur(0.4px) drop-shadow(0 0 8px var(--cursor-glow));
 }

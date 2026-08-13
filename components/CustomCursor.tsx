@@ -12,8 +12,8 @@ export default function CustomCursor() {
 
   const cursorX = useMotionValue(-100);
   const cursorY = useMotionValue(-100);
-  const springX = useSpring(cursorX, { damping: 22, stiffness: 320, mass: 0.4 });
-  const springY = useSpring(cursorY, { damping: 22, stiffness: 320, mass: 0.4 });
+  const springX = useSpring(cursorX, { damping: 40, stiffness: 900, mass: 0.2 });
+  const springY = useSpring(cursorY, { damping: 40, stiffness: 900, mass: 0.2 });
 
   useEffect(() => {
     const fine = window.matchMedia("(pointer: fine)").matches;
@@ -50,7 +50,7 @@ export default function CustomCursor() {
   return (
     <motion.div
       aria-hidden
-      className="pointer-events-none fixed left-0 top-0 z-[9999]"
+      className="cursor-overlay pointer-events-none fixed left-0 top-0 z-[9999]"
       style={{ x: springX, y: springY, pointerEvents: "none" }}
       animate={{ opacity: isVisible ? 1 : 0 }}
       transition={{ duration: 0.2 }}
