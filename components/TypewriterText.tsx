@@ -67,7 +67,7 @@ export default function TypewriterText({
         <span key={index}>
           {line}
           {!done && index === activeIndex && (
-            <span className="ml-0.5 inline-block h-[1em] w-[1px] translate-y-[2px] animate-pulse bg-current align-middle" />
+            <span className="ml-0.5 inline-block h-[1em] w-[3px] translate-y-[2px] animate-pulse bg-brand-red align-middle" />
           )}
           {index < displayedLines.length - 1 && <br />}
         </span>
