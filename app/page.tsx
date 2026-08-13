@@ -28,12 +28,27 @@ export default function Home() {
           Lookbook imagery arriving soon.
         </p>
 
+        {/* Mobile / narrow screens — portrait crop */}
         <div
           data-cursor-hover
-          className="relative mt-14 h-[380px] w-[280px] overflow-hidden border border-brand-black/15 sm:h-[520px] sm:w-[390px]"
+          className="relative mt-14 block h-[380px] w-[280px] overflow-hidden border border-brand-black/15 sm:h-[520px] sm:w-[390px] md:hidden"
         >
           <Image
             src="/hero-lookbook.jpg"
+            alt="eunyeon lookbook preview"
+            fill
+            priority
+            className="object-cover"
+          />
+        </div>
+
+        {/* Desktop / wide screens — full wide scene */}
+        <div
+          data-cursor-hover
+          className="relative mt-14 hidden aspect-[1680/966] w-full max-w-[900px] overflow-hidden border border-brand-black/15 md:block"
+        >
+          <Image
+            src="/hero-desktop.png"
             alt="eunyeon lookbook preview"
             fill
             priority
