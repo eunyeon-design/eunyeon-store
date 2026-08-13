@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import TypewriterText from "@/components/TypewriterText";
 
 const MARQUEE_IMAGES = [
   "/marquee/lookbook-01.jpg",
@@ -14,11 +15,10 @@ export default function Home() {
     <main>
       {/* HERO — visual placeholder until lookbook photography is ready */}
       <section className="relative flex min-h-[86vh] flex-col items-center justify-center overflow-hidden px-6 py-20">
-        <p className="mt-6 max-w-md text-center font-serif text-lg italic text-brand-black/60 sm:text-xl">
-          An analog romance for the objects you carry.
-          <br />
-          Lookbook imagery arriving soon.
-        </p>
+        <TypewriterText
+          lines={["An analog romance for the objects you carry.", "Lookbook imagery arriving soon."]}
+          className="mt-6 max-w-md text-center font-serif text-lg italic text-brand-black/60 sm:text-xl"
+        />
 
         {/* Mobile / narrow screens — portrait crop */}
         <div
