@@ -68,8 +68,11 @@ export default function CartPage() {
                       type="button"
                       data-cursor-hover
                       aria-label="Decrease quantity"
-                      onClick={() => updateQuantity(item.slug, item.quantity - 1)}
-                      className="text-brand-black/60 hover:text-brand-red"
+                      disabled={item.quantity <= 1}
+                      onClick={() => {
+                        if (item.quantity > 1) updateQuantity(item.slug, item.quantity - 1);
+                      }}
+                      className="text-brand-black/60 hover:text-brand-red disabled:cursor-not-allowed disabled:text-brand-black/20 disabled:hover:text-brand-black/20"
                     >
                       <Minus size={14} />
                     </button>
