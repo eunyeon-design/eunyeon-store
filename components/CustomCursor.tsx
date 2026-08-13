@@ -51,15 +51,15 @@ export default function CustomCursor() {
     <motion.div
       aria-hidden
       className="pointer-events-none fixed left-0 top-0 z-[9999]"
-      style={{ x: springX, y: springY }}
+      style={{ x: springX, y: springY, pointerEvents: "none" }}
       animate={{ opacity: isVisible ? 1 : 0 }}
       transition={{ duration: 0.2 }}
     >
       <motion.div
-        className="ribbon-cursor animate-ribbon-float"
+        className="ribbon-cursor animate-ribbon-float pointer-events-none"
         animate={{ scale: isHovering ? 1.5 : 1, rotate: isHovering ? -18 : -24 }}
         transition={{ type: "spring", damping: 14, stiffness: 220 }}
-        style={{ translateX: "-50%", translateY: "-50%" }}
+        style={{ translateX: "-50%", translateY: "-50%", pointerEvents: "none" }}
       >
         <CandyShape />
       </motion.div>
@@ -75,6 +75,7 @@ function CandyShape() {
       viewBox="0 0 46 32"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      style={{ pointerEvents: "none" }}
     >
       <defs>
         <linearGradient id="candyGradient" x1="20%" y1="5%" x2="70%" y2="100%">
