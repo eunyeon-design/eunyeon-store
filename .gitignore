@@ -29,5 +29,9 @@ yarn-error.log*
 # chat-pasted reference images (not site assets)
 /image/
 
+# unrelated content from other sessions sharing this folder
+/index.html
+/assets/
+
 # typescript
 *.tsbuildinfo
