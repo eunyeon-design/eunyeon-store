@@ -1,7 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { Instagram, Mail, Menu, Search, X } from "lucide-react";
+import { Instagram, Mail, Menu, Search, ShoppingBag, X } from "lucide-react";
+import { useCart } from "@/lib/cart-context";
 
 const NAV_LINKS = [
   { label: "SHOP", href: "/shop" },
@@ -16,6 +17,7 @@ const OUTER_LINKS = [
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const { totalItems } = useCart();
 
   return (
     <header className="sticky top-0 z-50 border-b border-brand-black/10 bg-brand-off/95 backdrop-blur-sm">
@@ -76,6 +78,23 @@ export default function Header() {
             </div>
           </div>
 
+          <a
+            href="/cart"
+            data-cursor-hover
+            aria-label="Cart"
+            className="relative flex items-center gap-1.5 text-brand-black transition-colors duration-200 hover:text-brand-red"
+          >
+            <ShoppingBag size={18} strokeWidth={1.75} />
+            <span className="hidden font-display text-[11px] font-bold uppercase tracking-widest2 sm:inline">
+              Cart{totalItems > 0 ? ` (${totalItems})` : ""}
+            </span>
+            {totalItems > 0 && (
+              <span className="absolute -right-2 -top-2 flex h-4 w-4 items-center justify-center rounded-full bg-brand-red text-[9px] font-bold text-brand-off sm:hidden">
+                {totalItems}
+              </span>
+            )}
+          </a>
+
           <button
             data-cursor-hover
             aria-label="Toggle menu"
@@ -90,7 +109,11 @@ export default function Header() {
       {menuOpen && (
         <div className="border-t border-brand-black/10 px-4 pb-6 md:hidden">
           <nav className="flex flex-col gap-4 pt-4 font-display text-sm font-bold uppercase tracking-widest2">
-            {[...NAV_LINKS, ...OUTER_LINKS.map((l) => ({ label: l.label, href: l.href }))].map(
+            {[
+              ...NAV_LINKS,
+              { label: `Cart${totalItems > 0 ? ` (${totalItems})` : ""}`, href: "/cart" },
+              ...OUTER_LINKS.map((l) => ({ label: l.label, href: l.href })),
+            ].map(
               (link) => (
                 <a
                   key={link.label}

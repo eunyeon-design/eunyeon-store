@@ -4,6 +4,7 @@ import "./globals.css";
 import CustomCursor from "@/components/CustomCursor";
 import SeasonBar from "@/components/SeasonBar";
 import Header from "@/components/Header";
+import { CartProvider } from "@/lib/cart-context";
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
@@ -33,10 +34,12 @@ export default function RootLayout({
   return (
     <html lang="ko">
       <body className={`${playfair.variable} ${archivo.variable}`}>
-        <CustomCursor />
-        <SeasonBar />
-        <Header />
-        {children}
+        <CartProvider>
+          <CustomCursor />
+          <SeasonBar />
+          <Header />
+          {children}
+        </CartProvider>
       </body>
     </html>
   );

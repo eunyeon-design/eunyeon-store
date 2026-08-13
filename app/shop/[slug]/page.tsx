@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { bookCoverProducts } from "@/lib/products";
+import AddToCartButtons from "@/components/AddToCartButtons";
 
 export function generateStaticParams() {
   return bookCoverProducts.map((product) => ({ slug: product.slug }));
@@ -58,13 +59,13 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
             )}
           </dl>
 
-          <button
-            type="button"
-            data-cursor-hover
-            className="mt-10 w-full border border-brand-black bg-brand-black py-3 font-display text-xs font-bold uppercase tracking-widest2 text-brand-off transition-colors hover:bg-brand-red hover:border-brand-red"
-          >
-            Add to Bag
-          </button>
+          <AddToCartButtons
+            slug={product.slug}
+            name={product.name}
+            price={product.price.amount}
+            currency={product.price.currency}
+            image={product.images[0]}
+          />
         </div>
       </div>
     </main>
