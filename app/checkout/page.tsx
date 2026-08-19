@@ -13,11 +13,38 @@ function formatPrice(amount: number, currency: string) {
 export default function CheckoutPage() {
   const { items, totalPrice, clearCart } = useCart();
   const [placed, setPlaced] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
 
   const currency = items[0]?.currency ?? "KRW";
 
-  const handlePlaceOrder = (event: React.FormEvent) => {
+  const handlePlaceOrder = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    setSubmitting(true);
+
+    const form = new FormData(event.currentTarget);
+    const customer = {
+      name: String(form.get("name") || ""),
+      email: String(form.get("email") || ""),
+      address: String(form.get("address") || ""),
+      phone: String(form.get("phone") || ""),
+    };
+
+    try {
+      await fetch("/api/notify-order", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          customer,
+          items: items.map((i) => ({ name: i.name, price: i.price, quantity: i.quantity })),
+          totalPrice,
+          currency,
+        }),
+      });
+    } catch {
+      // Order still completes even if the notification email fails to send.
+    }
+
+    setSubmitting(false);
     setPlaced(true);
     clearCart();
   };
@@ -78,6 +105,7 @@ export default function CheckoutPage() {
             </label>
             <input
               required
+              name="name"
               type="text"
               data-cursor-hover
               className="w-full border border-brand-black/20 bg-transparent px-3 py-2 font-display text-sm text-brand-black outline-none focus:border-brand-black"
@@ -90,6 +118,7 @@ export default function CheckoutPage() {
             </label>
             <input
               required
+              name="email"
               type="email"
               data-cursor-hover
               className="w-full border border-brand-black/20 bg-transparent px-3 py-2 font-display text-sm text-brand-black outline-none focus:border-brand-black"
@@ -102,6 +131,7 @@ export default function CheckoutPage() {
             </label>
             <input
               required
+              name="address"
               type="text"
               data-cursor-hover
               className="w-full border border-brand-black/20 bg-transparent px-3 py-2 font-display text-sm text-brand-black outline-none focus:border-brand-black"
@@ -114,6 +144,7 @@ export default function CheckoutPage() {
             </label>
             <input
               required
+              name="phone"
               type="tel"
               data-cursor-hover
               className="w-full border border-brand-black/20 bg-transparent px-3 py-2 font-display text-sm text-brand-black outline-none focus:border-brand-black"
@@ -122,10 +153,11 @@ export default function CheckoutPage() {
 
           <button
             type="submit"
+            disabled={submitting}
             data-cursor-hover
-            className="mt-4 w-full border border-brand-black bg-brand-black py-3 font-display text-xs font-bold uppercase tracking-widest2 text-brand-off transition-colors hover:bg-brand-red hover:border-brand-red"
+            className="mt-4 w-full border border-brand-black bg-brand-black py-3 font-display text-xs font-bold uppercase tracking-widest2 text-brand-off transition-colors hover:bg-brand-red hover:border-brand-red disabled:opacity-60"
           >
-            Place Order — {formatPrice(totalPrice, currency)}
+            {submitting ? "Placing Order…" : `Place Order — ${formatPrice(totalPrice, currency)}`}
           </button>
         </form>
 
